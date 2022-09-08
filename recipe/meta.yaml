@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.12.1" %}
+{% set version = "0.13.2" %}
 
 package:
   name: sktime-suite
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v.{{ version }}.tar.gz
-  sha256: 0e39ce6f7bbe59e3013a3a5f756aa6234f93a570ad6a1cfacebf78872b461529
+  sha256: 6c126003afd9e4994f14330e0bcf04d0ce739e6e4e901b5b62bbdf41e1f9bc47
 
 build:
-  number: 2
+  number: 0
   skip: true  # [(py==37 and aarch64)]
   skip: true  # [py<37 or py>39]
 
@@ -105,6 +105,15 @@ outputs:
         - stumpy
         - tbats
         - tsfresh
+        - dtw-python
+        - filterpy >=1.4.5
+        - hcrystalball >=0.1.9
+        - pyod >=0.8.0
+        - pystan ==2.19.1.1
+        - statsforecast>=0.5.2
+        - tensorflow
+        - tensorflow-probability
+        - tslearn >=0.5.2
     test:
       requires:
         - pip
